@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stockage Mobile Commerce Inventory</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <h1>Stockage</h1>
+        <p>Merchandise inventory with a mobile-commerce inspired layout.</p>
+      </header>
+
+      <section class="phone-stage" aria-label="Mobile style preview">
+        <article class="phone">
+          <div class="phone-bar"><span>9:41</span><span>◉ ◍ ▰</span></div>
+          <div class="brand-row"><span>☰</span><strong>stockage</strong><span>🛒</span></div>
+          <div class="product-visual"></div>
+          <h2 id="feature-name">Wool Runner</h2>
+          <p class="muted">Featured inventory item</p>
+          <p class="price" id="feature-price">$0.00</p>
+          <button class="pay-btn" type="button">Buy with Shop Pay</button>
+        </article>
+
+        <article class="phone">
+          <div class="phone-bar"><span>9:41</span><span>◉ ◍ ▰</span></div>
+          <div class="brand-row"><span>←</span><strong>Checkout</strong><span> </span></div>
+          <div class="summary-card">
+            <h3>Inventory Summary</h3>
+            <p><span>Total products</span><strong id="stat-products">0</strong></p>
+            <p><span>Total units</span><strong id="stat-units">0</strong></p>
+            <p><span>Low stock</span><strong id="stat-low">0</strong></p>
+            <p><span>Inventory value</span><strong id="stat-value">$0.00</strong></p>
+          </div>
+          <button class="checkout-btn" type="button">Pay now</button>
+        </article>
+      </section>
+
+      <section class="manager">
+        <form id="product-form" class="card">
+          <h3>Add / Update Product</h3>
+          <div class="grid">
+            <input type="text" id="name" placeholder="Product name" required maxlength="80" />
+            <input type="text" id="sku" placeholder="SKU" required maxlength="30" />
+            <input type="text" id="category" placeholder="Category" required maxlength="40" />
+            <input type="number" id="price" placeholder="Price" min="0" step="0.01" required />
+            <input type="number" id="quantity" placeholder="Quantity" min="0" step="1" required />
+            <input type="number" id="reorder" placeholder="Reorder" min="0" step="1" required />
+          </div>
+          <p id="form-message" class="form-message" role="status"></p>
+          <button type="submit">Save Product</button>
+        </form>
+
+        <section class="card">
+          <div class="toolbar">
+            <input type="search" id="search" placeholder="Search name, SKU, category" />
+            <select id="sort-by" aria-label="Sort products">
+              <option value="name-asc">Name A-Z</option>
+              <option value="name-desc">Name Z-A</option>
+              <option value="qty-asc">Quantity low-high</option>
+              <option value="qty-desc">Quantity high-low</option>
+              <option value="value-desc">Value high-low</option>
+            </select>
+            <button id="export-json" class="secondary" type="button">Export</button>
+            <button id="clear-all" class="danger" type="button">Clear</button>
+          </div>
+          <table>
+            <thead><tr><th>Name</th><th>SKU</th><th>Qty</th><th>Price</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="inventory-body"></tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

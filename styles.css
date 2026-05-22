@@ -1,0 +1,60 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #f8f7ff;
+  background: linear-gradient(135deg, #5b3df5, #7d5bff 60%, #6a5be0);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.app-shell { max-width: 1140px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+.hero { text-align: center; margin-bottom: 1.5rem; }
+.hero h1 { margin: 0; font-size: 2rem; }
+.hero p { margin-top: .35rem; opacity: .9; }
+
+.phone-stage { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); margin-bottom: 1.2rem; }
+.phone {
+  background: #fff;
+  color: #121222;
+  border-radius: 2rem;
+  padding: 1rem;
+  min-height: 560px;
+  box-shadow: 0 20px 40px rgb(0 0 0 / 20%);
+}
+.phone-bar, .brand-row { display:flex; justify-content:space-between; align-items:center; }
+.brand-row { margin: .8rem 0; font-size: 1.1rem; }
+.product-visual {
+  height: 210px;
+  border-radius: 1rem;
+  background: radial-gradient(circle at 30% 30%, #9f90ff, #4e35d7);
+  margin-bottom: .9rem;
+}
+h2 { margin: .2rem 0; }
+.muted { color:#5f5f72; margin:0; }
+.price { font-size:1.6rem; font-weight:700; margin:.7rem 0; }
+.pay-btn, .checkout-btn {
+  width:100%; border:0; border-radius:.7rem; color:#fff; padding:.85rem; font-weight:600;
+  background: linear-gradient(90deg, #4f2dff, #7a51ff); cursor:pointer;
+}
+.summary-card { border:1px solid #ecebfa; border-radius:.8rem; padding:.85rem; margin: 1.2rem 0; }
+.summary-card p { display:flex; justify-content:space-between; margin:.55rem 0; }
+
+.manager { display:grid; gap:1rem; grid-template-columns: 1fr; }
+.card { background:#ffffff; color:#1d2134; border-radius:1rem; padding:1rem; }
+.grid { display:grid; gap:.55rem; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); }
+input, select, button { font: inherit; padding:.55rem .6rem; border-radius:.55rem; border:1px solid #ccd1e2; }
+button { background:#4f2dff; color:#fff; border:0; cursor:pointer; }
+.toolbar { display:flex; gap:.5rem; margin-bottom:.6rem; flex-wrap:wrap; }
+.toolbar input { flex: 1 1 180px; }
+.secondary { background:#475569; }
+.danger { background:#b91c1c; }
+
+th, td { text-align:left; padding:.45rem; border-bottom:1px solid #eef1f7; font-size:.92rem; }
+.status-low { color:#b91c1c; font-weight:700; }
+.actions button { margin-right:.25rem; padding:.3rem .45rem; font-size:.8rem; }
+.actions .delete { background:#b91c1c; }
+.actions .adjust { background:#0f766e; }
+.form-message { min-height: 1.2rem; color:#0f766e; margin:.4rem 0 0; }
+
+@media (max-width: 700px) {
+  .phone { min-height: 510px; }
+  table { font-size:.8rem; }
+}
