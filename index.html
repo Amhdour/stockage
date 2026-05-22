@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merchandise Stock Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Merchandise Stock Manager</h1>
+      <p class="subtitle">Track products, quantities, and low-stock alerts.</p>
+
+      <section class="card">
+        <h2>Add / Update Product</h2>
+        <form id="product-form">
+          <div class="grid">
+            <label>
+              Product name
+              <input type="text" id="name" required />
+            </label>
+            <label>
+              SKU
+              <input type="text" id="sku" required />
+            </label>
+            <label>
+              Category
+              <input type="text" id="category" required />
+            </label>
+            <label>
+              Price ($)
+              <input type="number" id="price" min="0" step="0.01" required />
+            </label>
+            <label>
+              Quantity
+              <input type="number" id="quantity" min="0" step="1" required />
+            </label>
+            <label>
+              Reorder level
+              <input type="number" id="reorder" min="0" step="1" required />
+            </label>
+          </div>
+          <button type="submit">Save Product</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Inventory</h2>
+        <div class="toolbar">
+          <input type="search" id="search" placeholder="Search by name, SKU, or category" />
+          <button id="clear-all" class="danger">Clear Inventory</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>SKU</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="inventory-body"></tbody>
+        </table>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
